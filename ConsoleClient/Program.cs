@@ -20,7 +20,8 @@ namespace ConsoleClient
                 .AddJsonFile("AppSettings.json");
             var config = builder.Build();
             var appConfig = config.GetSection("Settings").Get<AppSettings>();
-            //Pain to get more conplex constants from config
+
+            //Cheat to get more complex constants from config
             switch (appConfig.EndpointStr)
             {
                 case "RegionEndpoint.USWest2":
@@ -28,7 +29,6 @@ namespace ConsoleClient
                     break;
                 // Add others if they come up
             }
-
             switch (appConfig.TypeStr)
             {
                 case "RRType.A":
@@ -36,7 +36,6 @@ namespace ConsoleClient
                     break;
                 //Add if they come up
             }
-
 
             string publicIp;
             using (var client = new HttpClient())
